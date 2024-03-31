@@ -25,6 +25,7 @@ export function CardList() {
   const [listHeight, setListHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
   const scrollY = useSharedValue(0);
+  const activeIndex = useSharedValue(0);
   const maxScrollY = listHeight - screenHeight + 100;
 
   const pan = Gesture.Pan()
@@ -59,7 +60,13 @@ export function CardList() {
         onLayout={(e) => setListHeight(e.nativeEvent.layout.height)}
       >
         {cards.map((card, index) => (
-          <Card card={card} key={index} index={index} scrollY={scrollY} />
+          <Card
+            card={card}
+            key={index}
+            index={index}
+            scrollY={scrollY}
+            activeCardIndex={activeIndex}
+          />
         ))}
       </View>
     </GestureDetector>
