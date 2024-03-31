@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Animated, {
+  clamp,
   useDerivedValue,
   useSharedValue,
 } from 'react-native-reanimated';
@@ -12,10 +14,14 @@ export default function Card({
   index: number;
   scrollY: any;
 }) {
-  const translateY = useDerivedValue(() => -scrollY.value);
+  const [height, setHeight] = useState(0);
+  const translateY = useDerivedValue(() =>
+    clamp(-scrollY.value, -index * height, 1000)
+  );
   return (
     <Animated.Image
       key={index}
+      onLayout={(e) => setHeight(e.nativeEvent.layout.height + 10)}
       source={card}
       style={{
         width: '100%',
