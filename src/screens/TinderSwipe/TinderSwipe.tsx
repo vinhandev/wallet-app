@@ -20,8 +20,6 @@ export default function Deck() {
     <View style={[styles.container, styles.cards]}>
       {cards
         .map((item, cardIndex) => {
-          console.log(cardIndex);
-
           if (cardIndex < index) return null;
 
           if (cardIndex === index) {
