@@ -10,7 +10,8 @@ This is a React Native Wallet Animation
 ## Screenshots
 
 <div style="display: flex; flex-direction: 'row';">
-<img src="./screenshots/1.png" width=19%>
+<img src="./screenshots/1.png" width=48%>
+<img src="./screenshots/1.gif" width=48%>
 </div>
 
 </div>
