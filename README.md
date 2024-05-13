@@ -9,9 +9,16 @@ This is a React Native Wallet Animation
 
 ## Screenshots
 
-<div style="display: flex; flex-direction: 'row';">
-<img src="./screenshots/1.png" width=48%>
-<img src="./screenshots/1.gif" width=48%>
+<div style="display: flex; flex-direction: 'row'; gap:5px;">
+<img src="./screenshots/1.png" width=32%>
+<img src="./screenshots/2.png" width=32%>
+<img src="./screenshots/3.png" width=32%>
 </div>
 
+## Demos
+
+<div style="display: flex; flex-direction: 'row'; gap:5px;">
+<img src="./screenshots/1.gif" width=32%>
+<img src="./screenshots/2.gif" width=32%>
+<img src="./screenshots/3.gif" width=32%>
 </div>
