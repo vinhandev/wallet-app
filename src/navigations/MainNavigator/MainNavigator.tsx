@@ -2,7 +2,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { Button } from 'react-native';
 import { colors } from '~/assets';
-import { Tarots, SwipeUp, Test, TinderSwipe } from '~/screens';
+import {
+  Tarots,
+  SwipeUp,
+  Test,
+  TinderSwipe,
+  VNPay,
+  Stripe,
+  ThreeD,
+  Message,
+} from '~/screens';
 
 const NativeStack = createNativeStackNavigator();
 
@@ -12,6 +21,18 @@ export default function MainNavigator() {
   const [index, setIndex] = useState(1);
 
   const screens: { name: string; component: () => React.JSX.Element }[] = [
+    {
+      name: 'Message',
+      component: Message,
+    }, // TODO: return this object into last if finish feature
+    {
+      name: 'Stripe',
+      component: Stripe,
+    },
+    {
+      name: 'VNPAY',
+      component: Test,
+    },
     {
       name: 'Apple Pay',
       component: SwipeUp,
@@ -25,8 +46,8 @@ export default function MainNavigator() {
       component: Tarots,
     },
     {
-      name: 'Test',
-      component: Test,
+      name: '3D',
+      component: ThreeD,
     },
   ];
 

@@ -1,9 +1,15 @@
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { styles } from './Button.styles';
 
-export default function Button() {
+type Props = {
+  title: string;
+  onPress: () => void;
+};
+
+export default function Button({ title, onPress }: Props) {
   return (
-    <View>
-      <Text>Button</Text>
-    </View>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
   );
 }

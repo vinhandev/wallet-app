@@ -1,10 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { Animated, Button, Image, View } from 'react-native';
-import Card from '../components/Card';
+import Card from './components/Card';
 import { data, metrics, colors } from '~/assets';
+import { useSharedValue } from 'react-native-reanimated';
 
 export default function AnimatedScreen() {
   const { cards } = data;
+
+  const shuffleBack = useSharedValue(false);
 
   return (
     <View
@@ -23,7 +26,12 @@ export default function AnimatedScreen() {
         }}
       >
         {cards.map((item, index) => (
-          <Card key={index} card={item} index={index} />
+          <Card
+            key={index}
+            card={item}
+            index={index}
+            shuffleBack={shuffleBack}
+          />
         ))}
       </View>
     </View>
